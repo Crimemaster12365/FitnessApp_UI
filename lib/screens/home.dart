@@ -13,6 +13,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int _selectedIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     final ScrollController _controller = ScrollController();
@@ -41,7 +42,8 @@ class _HomeState extends State<Home> {
           DashboardStats(),
         ],
       ),
-      bottomNavigationBar: buildCustomBottomNavigationBar(
+      // Replace buildCustomBottomNavigationBar with CustomBottomNavigationBar widget
+      bottomNavigationBar: CustomBottomNavigationBar(
         selectedIndex: _selectedIndex, // Set the initial selected index
         onItemTapped: (index) {
           setState(() {
@@ -65,7 +67,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       title: Padding(
-        padding: const EdgeInsets.only(top: 8.0),
+        padding: const EdgeInsets.only(top: 15.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -79,7 +81,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
                   'Branch: Barakar',
                   style: TextStyle(fontSize: 14),
                 ),
-                SizedBox(width: 4),
+                SizedBox(width: 8),
                 DropdownButton(
                   items: [
                     DropdownMenuItem(

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:velocity_x/velocity_x.dart';
 
 Widget buildOverviewAndDropDown() {
   return Padding(
@@ -20,16 +19,11 @@ Widget buildOverviewAndDropDown() {
           icon: Icon(Icons.keyboard_arrow_down,
               color: Colors.grey, size: 16), // Adjusted arrow size and color
           underline: Container(), // Removed underline
-          // Adjusted arrow size
           style: TextStyle(
               fontSize: 14,
               color: Colors
                   .grey), // Adjusted font size and color for dropdown item
-          items: <String>[
-            'This Week',
-            'Last Week',
-            'Custom Range'
-          ] // Dropdown items
+          items: <String>['This Week', 'Last Week', 'Custom Range']
               .map<DropdownMenuItem<String>>((String value) {
             return DropdownMenuItem<String>(
               value: value,
@@ -65,16 +59,28 @@ class DashboardStats extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(color: Colors.grey.shade300),
                 ),
-                padding: EdgeInsets.symmetric(vertical: 40, horizontal: 30),
+                padding: EdgeInsets.symmetric(vertical: 25, horizontal: 10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'Total Members',
-                      style: TextStyle(
-                        color: Colors.grey.shade600,
-                        fontSize: 16,
-                      ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Total Members',
+                          style: TextStyle(
+                            color: Colors.grey.shade600,
+                            fontSize: 16,
+                          ),
+                        ),
+                        IconButton(
+                          icon: Icon(Icons.arrow_forward_ios, size: 16),
+                          color: Colors.grey.shade600,
+                          onPressed: () {
+                            // Handle button press
+                          },
+                        ),
+                      ],
                     ),
                     SizedBox(height: 5),
                     Row(
@@ -105,16 +111,28 @@ class DashboardStats extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(color: Colors.grey.shade300),
                 ),
-                padding: EdgeInsets.symmetric(vertical: 40, horizontal: 40),
+                padding: EdgeInsets.symmetric(vertical: 25, horizontal: 10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'Total Sales',
-                      style: TextStyle(
-                        color: Colors.grey.shade600,
-                        fontSize: 16,
-                      ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Total Sales',
+                          style: TextStyle(
+                            color: Colors.grey.shade600,
+                            fontSize: 16,
+                          ),
+                        ),
+                        IconButton(
+                          icon: Icon(Icons.arrow_forward_ios, size: 16),
+                          color: Colors.grey.shade600,
+                          onPressed: () {
+                            // Handle button press
+                          },
+                        ),
+                      ],
                     ),
                     SizedBox(height: 5),
                     Row(
@@ -137,9 +155,7 @@ class DashboardStats extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
-                width:
-                    16), // Right space, assuming 18 (left space) + 20 (gap) + 10 (padding) + 10 (padding) + 18 (left space) + 20 (gap) + 10 (padding) + 10 (padding) = 116, so 116 from total width
+            SizedBox(width: 18), // Right space
           ],
         ),
         SizedBox(height: 10), // Space between rows
@@ -153,16 +169,28 @@ class DashboardStats extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(color: Colors.grey.shade300),
                 ),
-                padding: EdgeInsets.symmetric(vertical: 40, horizontal: 40),
+                padding: EdgeInsets.symmetric(vertical: 25, horizontal: 10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'Active PT',
-                      style: TextStyle(
-                        color: Colors.grey.shade600,
-                        fontSize: 16,
-                      ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Active PT',
+                          style: TextStyle(
+                            color: Colors.grey.shade600,
+                            fontSize: 16,
+                          ),
+                        ),
+                        IconButton(
+                          icon: Icon(Icons.arrow_forward_ios, size: 16),
+                          color: Colors.grey.shade600,
+                          onPressed: () {
+                            // Handle button press
+                          },
+                        ),
+                      ],
                     ),
                     SizedBox(height: 5),
                     Row(
@@ -193,16 +221,28 @@ class DashboardStats extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8),
                   border: Border.all(color: Colors.grey.shade300),
                 ),
-                padding: EdgeInsets.symmetric(vertical: 40, horizontal: 40),
+                padding: EdgeInsets.symmetric(vertical: 25, horizontal: 10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'Gym Views',
-                      style: TextStyle(
-                        color: Colors.grey.shade600,
-                        fontSize: 16,
-                      ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text(
+                          'Gym Views',
+                          style: TextStyle(
+                            color: Colors.grey.shade600,
+                            fontSize: 16,
+                          ),
+                        ),
+                        IconButton(
+                          icon: Icon(Icons.arrow_forward_ios, size: 16),
+                          color: Colors.grey.shade600,
+                          onPressed: () {
+                            // Handle button press
+                          },
+                        ),
+                      ],
                     ),
                     SizedBox(height: 5),
                     Row(
@@ -225,11 +265,10 @@ class DashboardStats extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
-                width: 16), // Right space, assuming same calculation as above
+            SizedBox(width: 18), // Right space
           ],
         ),
-        SizedBox(height: 5), // Space below the rows
+        SizedBox(height: 20), // Space below the rows
         Align(
           alignment: Alignment.center,
           child: TextButton(
